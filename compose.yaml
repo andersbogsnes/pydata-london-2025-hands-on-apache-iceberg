@@ -3,17 +3,18 @@ services:
     build:
       context: images/jupyter
     command:
-      - "jupyter"
-      - "lab"
-      - "--ip"
-      - "0.0.0.0"
-      - "--port"
-      - "8080"
-      - "--notebook-dir"
-      - "/app/notebooks"
-      - "--IdentityProvider.token=''"
-      - "--ServerApp.password=''"
-      - "--no-browser"
+      - "/bin/bash"
+      - "-c"
+      - |
+        # Open py scripts as notebooks by default
+        jupytext-config set-default-viewer python
+        # Start Jupyter Lab
+        jupyter lab \
+        --ip 0.0.0.0 --port 8080 \
+        --notebook-dir /app/notebooks \
+        --IdentityProvider.token='' \
+        --ServerApp.password='' \
+        --no-browser
     healthcheck:
       test: ["CMD", "curl", "localhost:8080/api"]
       interval: 30s
