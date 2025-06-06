@@ -7,5 +7,6 @@ trino[sqlalchemy]
 jupyterlab
 jupyterlab_myst
 jupyter_ruff
+jupytext
 ipywidgets
 quixstreams[avro]
