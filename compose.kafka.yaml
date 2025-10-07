@@ -2,7 +2,7 @@ include:
   - compose.yaml
 services:
   broker:
-    image: confluentinc/cp-kafka:7.9.1
+    image: confluentinc/cp-kafka:8.0.1
     ports:
       - "9092:9092"
       - "9101:9101"
@@ -32,7 +32,7 @@ services:
       start_period: 60s
 
   schema-registry:
-    image: confluentinc/cp-schema-registry:7.9.1
+    image: confluentinc/cp-schema-registry:8.0.1
     ports:
       - "8081:8081"
     environment:
@@ -82,7 +82,7 @@ services:
       start_period: 1s
 
   console:
-    image: docker.redpanda.com/redpandadata/console:v3.1.0
+    image: docker.redpanda.com/redpandadata/console:v3.2.2
     entrypoint: /bin/sh
     command: -c 'echo "$$CONSOLE_CONFIG_FILE" > /tmp/config.yml; /app/console'
     environment:

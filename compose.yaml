@@ -47,7 +47,7 @@ services:
       retries: 2
       start_period: 15s
   db:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     environment:
       - POSTGRES_PASSWORD=postgres
     ports:
@@ -62,7 +62,7 @@ services:
       start_period: 10s
 
   lakekeeper:
-    image: quay.io/lakekeeper/catalog:v0.8.5
+    image: quay.io/lakekeeper/catalog:v0.10.2
     pull_policy: always
     environment:
       - LAKEKEEPER__PG_ENCRYPTION_KEY=P0d6Ye9v4rXDUpHUSj003yfF4E07SSBj
@@ -86,7 +86,7 @@ services:
     ports:
       - "8181:8181"
   migrate:
-    image: quay.io/lakekeeper/catalog:v0.8.5
+    image: quay.io/lakekeeper/catalog:v0.10.2
     pull_policy: always
     environment:
       - LAKEKEEPER__PG_DATABASE_URL_READ=postgresql://postgres:postgres@db:5432/postgres
@@ -98,7 +98,7 @@ services:
       db:
         condition: service_healthy
   trino:
-    image: trinodb/trino:475
+    image: trinodb/trino:477
     volumes:
       - ./images/trino/lakekeeper.properties:/etc/trino/catalog/lakekeeper.properties
 
