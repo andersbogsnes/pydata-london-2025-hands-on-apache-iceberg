@@ -8,17 +8,25 @@ we will play with some real-life data.
 ## Prerequisites
 You will need Docker and Docker Compose installed, as we will be running a number of containers
 for the various backing services we need. Once the data and images are downloaded, there is no 
-further internet access required - the material itself is 100% offline.
+further internet access required - the material itself is 100% offline. To run all the containers, you will need 
+a decent amount of RAM. Most Non-linux Docker engines limit the amount of RAM available to containers, so you will need to 
+adjust your Docker settings accordingly.
 
 ### Linux
 See https://docs.docker.com/engine/install/ and https://docs.docker.com/compose/install/
 
+Linux users do not need to adjust Docker settings for memory consumption since docker is running natively.
+
 ### Windows
 See https://docs.docker.com/desktop/
+
+For changing memory settings, see https://docs.docker.com/desktop/settings-and-maintenance/settings/#resources
 
 ### MacOS
 I recommend Orbstack:
 See https://orbstack.dev/
+
+For changing memory settings, see https://docs.orbstack.dev/settings#memory-limit to set the memory limit.
 
 With Docker and Docker Compose installed, run the following which will start the required
 services
