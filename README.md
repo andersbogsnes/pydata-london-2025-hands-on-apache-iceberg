@@ -8,8 +8,12 @@ we will play with some real-life data.
 ## Prerequisites
 You will need Docker and Docker Compose installed, as we will be running a number of containers
 for the various backing services we need. Once the data and images are downloaded, there is no 
-further internet access required - the material itself is 100% offline. To run all the containers, you will need 
-a decent amount of RAM. Most Non-linux Docker engines limit the amount of RAM available to containers, so you will need to 
+further internet access required - the material itself is 100% offline. 
+
+### Troubleshooting Note
+To run all the containers, you will need a decent amount of RAM. 
+
+Most Non-linux Docker engines limit the amount of RAM available to containers, so you will need to 
 adjust your Docker settings accordingly.
 
 ### Linux
@@ -93,6 +97,8 @@ iceberg download housing
 While gov.uk has data back from 1995, by default, the CLI will download data starting in 2015, 
 mainly to not have to wait around 10 minutes when processing the data. If you want to explore 
 further back, set the `--start-year` option to the year you're interested in.
+
+Each year is around 150-200MB, so this will take a while.
 
 
 ## Included Data

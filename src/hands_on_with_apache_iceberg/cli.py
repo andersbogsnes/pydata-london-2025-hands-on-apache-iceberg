@@ -50,7 +50,7 @@ def download_data(
     ] = 2015,
     end_year: Annotated[
         int, typer.Option("--end-year", "-e", help="Last year of data to download")
-    ] = 2024,
+    ] = 2025,
     output_dir: pathlib.Path = typer.Option(
         "./data/house_prices", help="Directory to save downloaded files"
     ),
